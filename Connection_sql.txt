@@ -1,0 +1,21 @@
+# pip install pyodbc     comando para instalar librerias de conexion 
+import pyodbc
+
+
+def connectionServer(serverName):
+    print('abriendo conexion')
+    if(serverName =='Origen'):
+        try:
+            s = '****' #Your server name 
+            d = '****' #DATABASE
+            u = '****' #Your login
+            p = '****' #Your login password
+            cstr = 'DRIVER={SQL Server};SERVER='+s+';DATABASE='+d+';UID='+u+';PWD='+ p
+            conn = pyodbc.connect(cstr)
+            print('Conexion Exitosa')
+            return conn
+        except Exception as ex:
+            print(ex)
+    else:
+        print('Servidor Desconocido')
+

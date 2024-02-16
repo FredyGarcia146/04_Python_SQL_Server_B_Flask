@@ -1,0 +1,146 @@
+
+<!-- 
+    -   <a></a> Object  (Objeto)
+    PAGINAS AYUDA
+    -   https://www.bestcssbuttongenerator.com/     button generator page
+    -   https://codepen.io/                         Others developers of code html
+    -   https://codepen.io/nodws/pen/VwpbeX         Example Modal
+ -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Llamando archvivos css -->
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/modals.css" />
+    <link rel="stylesheet" href="../static/menu.css" />
+    <!-- Llamando archvivos js -->
+    <script src="../static/model.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <nav id='menu'>
+        <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+        <ul>
+          <li><a href='http://'>Home</a></li>
+          <li><a class='dropdown-arrow' href='http://'>Products</a>
+            <ul class='sub-menus'>
+              <li><a href='http://'>Products 1</a></li>
+              <li><a href='http://'>Products 2</a></li>
+              <li><a href='http://'>Products 3</a></li>
+              <li><a href='http://'>Products 4</a></li>
+            </ul>
+          </li>
+          <li><a href='http://'>About</a></li>
+          <li><a class='dropdown-arrow' href='http://'>Services</a>
+            <ul class='sub-menus'>
+              <li><a href='http://'>Services 1</a></li>
+              <li><a href='http://'>Services 2</a></li>
+              <li><a href='http://'>Services 3</a></li>
+            </ul>
+          </li>
+          <li><a href='http://'>Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <h1><b>Postulants</b></h1>
+
+    <a href="#" class="myButtonAgregar" onclick="addPostulantDetails()">Add Postulant</a>
+
+    <table id="postulants">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">First_LastName</th>
+          <th scope="col">Second_LastName</th>
+          <th scope="col">Age</th>
+          <th scope="col">Profession</th>
+          <th scope="col">Actual_State</th>
+          <th>Options</th>
+          <th>Alters</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+    <!-- Modal Agregar Postulante -->
+    <div id="modal-Agregar" class="modale" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h2>Please enter applicant details</h2>
+          <a href="#" class="btn-close closemodale" aria-hidden="true" onclick="closeModal()">&times;</a>
+        </div>
+
+        <div class="modal-body">
+          <input id='txtName' type="text" name="u" placeholder="Name" size="20" /><br>
+          <input id='txtFirstLastName' type="text" name="u" placeholder="First Last Name" size="20" /><br>
+          <input id='txtSecondLastName' type="text" name="u" placeholder="Second Las tName" size="20" /><br>
+          <input id='txtAge' type="text" name="u" placeholder="Age" size="20" /><br>
+          <input id='txtOcupation' type="text" name="u" placeholder="Ocupation" size="20" /><br>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="btn" id="btn_ingresar" onclick="AddPostulant()">Save</a>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Modal Agregar Postulante -->
+
+    <!-- Modal Modificar Postulante -->
+    <div id="modal-Modificar" class="modale" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h2>Please enter applicant details</h2>
+          <a href="#" class="btn-close closemodale" aria-hidden="true" onclick="closeModal()">&times;</a>
+        </div>
+
+        <div id ='DetailsPostulant'class="modal-body">
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="btn" id="btn_ingresar" onclick="ModifyPostulantBase()">Save</a>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Modal Modificar Postulante -->
+
+    <!-- Modal Reason -->
+    <div id="reason" class="modale" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h2 id ='titleReason'>Please enter Reason</h2>
+          <a href="#" class="btn-close closemodale" aria-hidden="true" onclick="closeModal()">&times;</a>
+        </div>
+        <b id ='CodePostulantReason'>Codigo</b>
+        <b id ='reasonAplication'>Reason</b>
+        <div class="modal-body">
+          <input  id = 'bodyReason' type="text" name="u" placeholder="Reason" size="20" /><br>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="btn" id="btn_ingresar" onclick="changeStatePostulation()">Save</a>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Modal Reason -->
+
+
+
+</body>
+</html>
+
